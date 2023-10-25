@@ -55,7 +55,7 @@ const TaskCard = ({ item, index, getDatas }) => {
     setDone(!done)
     if (checked) {
       axios
-        .put(`http://localhost:8000/list/${id}`, {
+        .put(`https://todo-back-q1ut.onrender.com/list/${id}`, {
           done: checked,
         })
         .then(function (response) {
@@ -72,7 +72,7 @@ const TaskCard = ({ item, index, getDatas }) => {
 
   function handleEdit(id) {
     axios
-      .put(`http://localhost:8000/list/${id}`, {
+      .put(`https://todo-back-q1ut.onrender.com/list/${id}`, {
         list: editedList,
       })
       .then(function (response) {
@@ -89,7 +89,7 @@ const TaskCard = ({ item, index, getDatas }) => {
 
   function handleDelete(id) {
     axios
-      .delete(`http://localhost:8000/list/${id}`)
+      .delete(`https://todo-back-q1ut.onrender.com/${id}`)
       .then(function (response) {
         if (response.status === 200) {
           notify()

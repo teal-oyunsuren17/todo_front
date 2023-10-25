@@ -53,7 +53,7 @@ const Kanban = () => {
     })
 
   function getDatas() {
-    axios.get("http://localhost:8000/list").then((res) => {
+    axios.get(`https://todo-back-q1ut.onrender.com/list`).then((res) => {
       if (res.status === 200) {
         setDatas(res.data)
       } else {
@@ -111,9 +111,10 @@ const Kanban = () => {
         },
       })
       axios
-        .put(`http://localhost:8000/list/${result.draggableId}`, {
+        .put(`https://todo-back-q1ut.onrender.com/list/${result.draggableId}`, {
           done: destination.droppableId === "123" ? false : true,
         })
+
         .then(function (response) {
           if (response.status === 200) {
             notify()

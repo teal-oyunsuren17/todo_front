@@ -16,7 +16,7 @@ export function CreateTasks(props) {
 
   function handleSave() {
     axios
-      .post("http://localhost:8000/list", {
+      .post(`https://todo-back-q1ut.onrender.com/list`, {
         list: list,
       })
       .then(function (response) {
