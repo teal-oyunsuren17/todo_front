@@ -89,7 +89,7 @@ const TaskCard = ({ item, index, getDatas }) => {
 
   function handleDelete(id) {
     axios
-      .delete(`https://todo-back-q1ut.onrender.com/${id}`)
+      .delete(`https://todo-back-q1ut.onrender.com/list/${id}`)
       .then(function (response) {
         if (response.status === 200) {
           notify()
