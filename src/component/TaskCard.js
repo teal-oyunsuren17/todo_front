@@ -87,6 +87,12 @@ const TaskCard = ({ item, index, getDatas }) => {
       })
   }
 
+  const handleKey = (event, id) => {
+    if (event.key === "Enter") {
+      handleEdit(id)
+    }
+  }
+
   function handleDelete(id) {
     axios
       .delete(`https://todo-back-q1ut.onrender.com/list/${id}`)
@@ -124,6 +130,7 @@ const TaskCard = ({ item, index, getDatas }) => {
                   value={editedList}
                   onChange={(e) => setEditedList(e.target.value)}
                   placeholder={`${item.list}`}
+                  onKeyDown={(event) => handleKey(event, item._id)}
                 ></input>
                 <button onClick={() => handleEdit(item._id)}>
                   <MdFileDownloadDone />

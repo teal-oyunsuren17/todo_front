@@ -31,6 +31,12 @@ export function CreateTasks(props) {
       })
   }
 
+  function handleKey(event) {
+    if (event.key === "Enter") {
+      handleSave()
+    }
+  }
+
   return (
     <div className="w-100 text-center m-6">
       <h1 className="text-2xl font-mono mb-3" style={{ color: "#ffdfdb" }}>
@@ -42,6 +48,7 @@ export function CreateTasks(props) {
           onChange={(e) => setList(e.target.value)}
           className="border-solid border-2 rounded-l-lg border-rose-100 bg-slate-800 text-white pl-3"
           placeholder="       add task here"
+          onKeyDown={handleKey}
         ></input>
         <button
           className="rounded-r-lg bg-rose-100 w-10 flex justify-center items-center"
